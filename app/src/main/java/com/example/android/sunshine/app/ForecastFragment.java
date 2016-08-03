@@ -80,7 +80,11 @@ public class ForecastFragment extends Fragment {
                 "Fri 6/27 - Foggy - 21/10",
                 "Sat 6/28 - TRAPPED IN WEATHERSTATION - 23/18",
                 "Sun 6/29 - Sunny - 20/7"
+<<<<<<< HEAD
         }; 
+=======
+        };
+>>>>>>> master
 
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);

@@ -202,7 +202,6 @@ public class ForecastFragment extends Fragment {
 
             }
 
-
             @Override
             protected String[] doInBackground(String... params) {
                 // These two need to be declared outside the try/catch
@@ -249,7 +248,7 @@ public class ForecastFragment extends Fragment {
 
                     URL url = new URL(builtUri.toString());
 
-                    Log.v(LOG_TAG, "Built URI " + builtUri.toString());
+                   // Log.v(LOG_TAG, "Built URI " + builtUri.toString());
 
 
                     // Create the request to OpenWeatherMap, and open the connection
@@ -280,7 +279,7 @@ public class ForecastFragment extends Fragment {
                     }
                     forecastJsonStr = buffer.toString();
                 } catch (IOException e) {
-                    Log.e(LOG_TAG, "Error ", e);
+                //    Log.e(LOG_TAG, "Error ", e);
                     // If the code didn't successfully get the weather data, there's no point in attemping
                     // to parse it.
                     return null;
@@ -292,7 +291,7 @@ public class ForecastFragment extends Fragment {
                         try {
                             reader.close();
                         } catch (final IOException e) {
-                            Log.e(LOG_TAG, "Error closing stream", e);
+                          //  Log.e(LOG_TAG, "Error closing stream", e);
                         }
                     }
                 }
@@ -300,7 +299,7 @@ public class ForecastFragment extends Fragment {
                 try {
                     return getWeatherDataFromJson(forecastJsonStr, numDays);
                 } catch (JSONException e) {
-                    Log.e(LOG_TAG, e.getMessage(), e);
+                  //  Log.e(LOG_TAG, e.getMessage(), e);
                     e.printStackTrace();
                 }
 

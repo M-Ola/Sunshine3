@@ -36,7 +36,7 @@ public class DetailActivity extends AppCompatActivity {
             setContentView(R.layout.activity_detail);
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.container, new PlaceholderFragment())
+                        .add(R.id.contain, new PlaceholderFragment())
                         .commit();
             }
         }
@@ -82,7 +82,7 @@ public class DetailActivity extends AppCompatActivity {
                 Intent intent = getActivity().getIntent();
                 if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
                     String forecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
-                    ((TextView) rootView.findViewById(R.id.detail_text))
+                    ((TextView)rootView.findViewById(R.id.detail_text))
                             .setText(forecastStr);
                 }
 
@@ -90,8 +90,6 @@ return rootView;
 
             }
         }
-
-
-    }
+}
 
 

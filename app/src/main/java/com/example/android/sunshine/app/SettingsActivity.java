@@ -1,5 +1,6 @@
 package com.example.android.sunshine.app;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -10,11 +11,16 @@ import android.preference.PreferenceManager;
  * Created by M on 8/9/2016.
  */
 public class SettingsActivity extends PreferenceActivity  implements Preference.OnPreferenceChangeListener{
+    @SuppressWarnings("deprecated")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Add 'general' preferences, defined in the XML file
         // TODO: Add preferences from XML
+
+addPreferencesFromResource(R.xml.prefs_general);
+
+        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_location_key)));
 
         // For all preferences, attach an OnPreferenceChangeListener so the UI summary can be
         // updated when the preference changes.
